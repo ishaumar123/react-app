@@ -2,16 +2,24 @@
 import './App.css';
 import StoryListing from './StoryListing/StoryListing';
 import FollowerListing from './FollowerListing/FollowerListing';
-// import StoryTable from './StoryListing/StoryTable';
+import UserListing from './UserListing';
+import Story from './StoryListing/Story';
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 function App() {
   return (
     <>
     <div className='container'>
-   <StoryListing />
-   <FollowerListing/>
+   <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<UserListing />} />
+      <Route path='/users/:id' element={<FollowerListing />} />
+      <Route path='/users/:id/stories' element={<StoryListing />} />
+      <Route path='/users/:userId/stories/:id' element={<Story />} />
+    </Routes>
+  </BrowserRouter>
    </div>
-   
+
    </>
   );
 }
