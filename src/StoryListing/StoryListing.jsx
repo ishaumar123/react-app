@@ -1,7 +1,8 @@
 import axios from "axios";
+import "./story.css"
 import { useEffect, useState } from "react";
 import StoryTable from "../StoryListing/StoryTable";
-function StoryListing() {
+const StoryListing = () => {
   const [stories, setStories] = useState();
 
   useEffect(() => {
@@ -13,9 +14,8 @@ function StoryListing() {
       .then((response) => {
         setStories(response.data.data);
       })
-      .catch((error) => console.error(`Error: ${error}`));
+      .catch((error) => (`Error: ${error}`));
   };
-  console.log(stories);
   return (
     <>
       <h1 className=" mt-5 text-center main-heading ">All Stories</h1>
