@@ -1,16 +1,15 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import StoryTable from "../StoryListing/StoryTable";
-import { useParams } from 'react-router-dom'
 function StoryListing() {
   const [stories, setStories] = useState();
-  const { id } = useParams()
+
   useEffect(() => {
     getAllStories();
   }, []);
   const getAllStories = () => {
     axios
-      .get(`http://localhost:3000/api/v1/users/${id}/stories`)
+      .get(`http://localhost:3000/api/v1/stories`)
       .then((response) => {
         setStories(response.data.data);
       })

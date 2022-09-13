@@ -2,8 +2,6 @@ import React from "react";
 import axios from "axios";
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from "react";
-// import StoryTable from "../StoryListing/StoryTable";
-
 function UserListing() {
   const [users, setUsers] = useState();
 
@@ -21,8 +19,11 @@ function UserListing() {
   console.log(users);
   return (
     <>
-      <h1 className=" mt-5 text-center main-heading ">All Users</h1>
+        <Link to='stories' className='btn btn-lg btn-danger me-3 shadow mt-5 text-white'>
+        Stories
+       </Link>
       <div className="row mt-4">
+
       <table className='table table-striped mt-4'>
         <thead className='border'>
           <tr>
@@ -42,14 +43,6 @@ function UserListing() {
                     className='btn btn-md rounded-pill btn-outline-info mt-2 shadow'
                   >
                     Follower
-                  </Link>
-                  </td>
-                  <td>
-                  <Link
-                    to={`/users/${user.id}/stories`}
-                    className='btn btn-md rounded-pill btn-outline-info mt-2 shadow'
-                  >
-                   Stories
                   </Link>
                   </td>
               </tr>

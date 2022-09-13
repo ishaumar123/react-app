@@ -14,8 +14,8 @@ function App() {
     <Routes>
       <Route path='/' element={<UserListing />} />
       <Route path='/users/:id' element={<FollowerListing />} />
-      <Route path='/users/:id/stories' element={<StoryListing />} />
-      <Route path='/users/:userId/stories/:id' element={<Story />} />
+      <Route path='/stories' element={<StoryListing />} />
+      <Route path='/stories/:id' element={<Story />} />
     </Routes>
   </BrowserRouter>
    </div>
