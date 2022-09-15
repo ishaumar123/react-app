@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 const StoryTable = (props) => {
   const showStory = () => {
-    console.log(props.storie);
   };
 
   return (
